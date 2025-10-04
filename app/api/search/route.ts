@@ -2,12 +2,15 @@ import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { z, ZodError } from 'zod';
 
+//Supabase for cilent creating
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+//Github API Key
 const GithubToken = process.env.GITHUB_TOKEN;
 
+// validation for query
 const querySchema = z.object({
   topic: z.string().min(1),
   stars: z.string().optional().transform(val => val ? parseInt(val) : undefined),
@@ -15,6 +18,8 @@ const querySchema = z.object({
 });
 
 export async function GET(req: NextRequest) {
+ //TODO: Help me get the user id using session/oauth
+  
   const { searchParams } = new URL(req.url);
   const params = {
     topic: searchParams.get('topic') ?? '',
@@ -24,7 +29,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const query = querySchema.parse(params);
-
+    //encoded the query and url for Github REGEX
     const searchTerm = [
       `topic:${query.topic}`,
       'is:public',
@@ -33,9 +38,11 @@ export async function GET(req: NextRequest) {
       query.issues !== undefined ? `open_issues:>${query.issues}` : ''
     ].filter(Boolean).join(' ');
 
+
     const encodedUrl = encodeURIComponent(searchTerm);
     const finalUrl = `https://api.github.com/search/repositories?q=${encodedUrl}`;
 
+    //Fetching the finalurl
     const response = await fetch(finalUrl, {
       headers: {
         'Accept': 'application/vnd.github+json',
@@ -43,7 +50,8 @@ export async function GET(req: NextRequest) {
         'X-GitHub-Api-Version': '2022-11-28',
       }
     });
-
+    
+    //Rate limiting so user cannot request continously
     if (!response.ok) {
       if (response.status === 429) {
         const resetTime = response.headers.get('X-RateLimit-Reset');
