@@ -13,14 +13,15 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="flex min-h-screen items-center justify-center bg-background px-4 py-16">
+    <section className="flex min-h-screen items-center justify-center px-4 py-16 
+                      bg-grey-800">
       <div className="w-full max-w-md">
         {/* Glassmorphism Card */}
-        <div className="p-8 rounded-2xl bg-card/70 backdrop-blur-md shadow-md">
-          <h1 className="text-2xl font-bold text-center mb-2 text-foreground">
+        <div className="p-8 rounded-2xl bg-white/4 backdrop-blur-md shadow-md">
+          <h1 className="text-2xl font-bold text-center mb-2 text-white">
             Welcome to OpenSource
           </h1>
-          <p className="text-center text-muted-foreground mb-6">
+          <p className="text-center text-white/80 mb-6">
             Sign in to continue
           </p>
 
@@ -28,7 +29,7 @@ export default function LoginPage() {
           <Button
             type="button"
             variant="outline"
-            className="w-full flex items-center justify-center gap-2 mb-4 bg-background/20 border border-accent/50 hover:bg-background/30"
+            className="w-full flex items-center justify-center gap-2 mb-4  border-white/50 hover:bg-white/30 text-white"
             onClick={() => signInWithProvider("google")}
           >
             <svg
@@ -41,14 +42,14 @@ export default function LoginPage() {
               <path fill="#FBBC05" d="M10.67 28.4c-.48-1.42-.75-2.93-.75-4.4s.27-2.98.75-4.4l-7.98-6.19C1.47 16.39 0 20.06 0 24s1.47 7.61 3.89 10.59l7.98-6.19z"/>
               <path fill="#EA4335" d="M24 48c6.48 0 11.91-2.13 15.88-5.79l-7.2-5.59c-2.04 1.37-4.64 2.18-8.68 2.18-6.14 0-11.41-3.96-13.33-9.5l-7.98 6.19C6.57 42.18 14.62 48 24 48z"/>
             </svg>
-            <span>continue with Google</span>
+            <span>Continue with Google</span>
           </Button>
 
           {/* GitHub Button */}
           <Button
             type="button"
             variant="outline"
-            className="w-full flex items-center justify-center gap-2 bg-background/20 border border-accent/50 hover:bg-background/30"
+            className="w-full flex items-center justify-center gap-2 bg-white/20 border border-white/50 hover:bg-white/30 text-white"
             onClick={() => signInWithProvider("github")}
           >
             <svg
@@ -60,7 +61,7 @@ export default function LoginPage() {
             >
               <path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.94c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.18.08 1.8 1.22 1.8 1.22 1.04 1.79 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.75.81 1.2 1.83 1.2 3.09 0 4.45-2.69 5.42-5.25 5.7.42.37.8 1.1.8 2.23 0 1.61-.01 2.91-.01 3.31 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
             </svg>
-            <span>continue with GitHub</span>
+            <span>Continue with GitHub</span>
           </Button>
         </div>
       </div>

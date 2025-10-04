@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { supabase } from '@/app/lib/SupabaseCilent'; 
-
 export default function DashboardPage() {
   const router = useRouter();
 

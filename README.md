@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RadiantDev - Open Source Repository Finder
 
-## Getting Started
+This project is a Next.js application for discovering and managing open source projects.
 
-First, run the development server:
+## New Components Added
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+We've integrated a new set of components for an enhanced user experience:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **OpenSourceHero** - A comprehensive landing page component with interactive elements
+2. **InteractiveDotGrid** - An animated background with interactive dots that respond to mouse movement
+3. **Glow** - A glowing effect component for visual enhancement
+4. **Mockup** - A container for showcasing UI elements
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## UI Components Updated
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The following UI components have been updated with enhanced styling:
 
-## Learn More
+1. **Button** - Enhanced with new variants and improved focus states
+2. **Input** - Improved styling and accessibility
+3. **Badge** - Enhanced styling and interaction
+4. **Card** - Updated with better spacing and layout
 
-To learn more about Next.js, take a look at the following resources:
+## How to View the New Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Run the development server: `npm run dev`
+2. Visit http://localhost:3002 to see the main landing page
+3. Click on "New Hero Demo" or "New Hero" in the navigation to view the new OpenSourceHero component
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Dependencies
 
-## Deploy on Vercel
+All required dependencies were already installed in the project:
+- framer-motion
+- lucide-react
+- @radix-ui/react-slot
+- class-variance-authority
+- clsx
+- tailwind-merge
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Styling
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project uses Tailwind CSS v4 with the new plugin system. The globals.css file has been updated with new color variables and theme mappings.
