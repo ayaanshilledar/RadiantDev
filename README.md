@@ -1,4 +1,4 @@
-# RadiantDev - Open Source Repository Finder
+# RadiantDev 
 
 This project is a Next.js application for discovering and managing open source projects.
 
