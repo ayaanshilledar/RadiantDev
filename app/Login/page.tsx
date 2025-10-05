@@ -7,7 +7,7 @@ export default function LoginPage() {
   const signInWithProvider = async (provider: "google" | "github") => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: `${window.location.origin}/dashboard` },
+      options: { redirectTo: `${window.location.origin}/search` },
     });
     if (error) console.error(`${provider} sign-in error:`, error.message);
   };
